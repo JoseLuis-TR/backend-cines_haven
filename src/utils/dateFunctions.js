@@ -13,7 +13,6 @@ const isLater = (date1, date2) => {
 
     const dateObject1 = new Date(date1[2], date1[1], date1[0])
     const dateObject2 = new Date(date2[2], date2[1], date2[0])
-    console.log(dateObject1)
     return dateObject1 > dateObject2
 }
 

@@ -5,7 +5,6 @@ const roomsData = require("./rooms.json");
 
 const getAllSessions = () => {
     console.log("Get /sessions Model")
-    console.log(sessionsData)
     return sessionsData;
 }
 
@@ -32,7 +31,6 @@ const getAllSessionSinceToday = () => {
             sessionsSinceToday.push(session)
         }
     })
-    console.log("salimos")
     return sessionsSinceToday;
 }
 
