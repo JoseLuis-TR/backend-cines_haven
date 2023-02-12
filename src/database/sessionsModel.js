@@ -1,4 +1,4 @@
-const utils = require("../utils/todayFormatted")
+const utils = require("../utils/dateFunctions")
 const sessionsData = require("./sessions.json");
 const moviesData = require("./movies.json");
 const roomsData = require("./rooms.json");
@@ -12,22 +12,25 @@ const getAllSessions = () => {
 const getAllSessionSinceToday = () => {
     console.log("Get /sincetoday AllToday Model")
     const sessionCopy = JSON.parse(JSON.stringify(sessionsData));
+    const formattedToday = utils.getTodayFormatted()
     const sessionsSinceToday = []
     // Recorremos la copia de sesiones
     sessionCopy.forEach(session => {
         // Filtramos los datos de peliculas y salas de cada sesión
-        const movieData = moviesData.filter(x => x.id === session.movie_id);
-        const roomData = roomsData.filter(y => y.id === session.room_id)
-        Object.assign(
-            session,
-            {
-                // Añadimos los datos de peliculas y salas en la respuesta
-                roomName: roomData[0].name,
-                movieName: movieData[0].title,
-                moviePoster: movieData[0].poster_image
-            }
-        );
-        sessionsSinceToday.push(session)
+        if(utils.isLater(session.date, formattedToday)) {
+            const movieData = moviesData.filter(x => x.id === session.movie_id);
+            const roomData = roomsData.filter(y => y.id === session.room_id)
+            Object.assign(
+                session,
+                {
+                    // Añadimos los datos de peliculas y salas en la respuesta
+                    roomName: roomData[0].name,
+                    movieName: movieData[0].title,
+                    moviePoster: movieData[0].poster_image
+                }
+            );
+            sessionsSinceToday.push(session)
+        }
     })
     console.log("salimos")
     return sessionsSinceToday;
