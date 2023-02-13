@@ -1,3 +1,5 @@
+// Función usada para formatear las fechas en un mismo formato
+// para que sea más facil compararlas con las de la base de datos
 const getTodayFormatted = () => {
     const today = new Date()
     let dia = today.getDate().toString()
@@ -7,6 +9,8 @@ const getTodayFormatted = () => {
     return `${dia}/${mes}/${today.getFullYear()}`
 }
 
+// Necesaria para conocer si una fecha es posterior a otra
+// Se usa en la petición de peliculas desde el día de hoy, de esta manera
 const isLater = (date1, date2) => {
     date1 = date1.split("/")
     date2 = date2.split("/")

@@ -3,11 +3,13 @@ const sessionsData = require("./sessions.json");
 const moviesData = require("./movies.json");
 const roomsData = require("./rooms.json");
 
+//Llamada desde localhost:3001/havenV1/sessions
 const getAllSessions = () => {
     console.log("Get /sessions Model")
     return sessionsData;
 }
 
+// Llamada desde localhost:3001/havenV1/sessions/sincetoday
 const getAllSessionSinceToday = () => {
     console.log("Get /sincetoday AllToday Model")
     const sessionCopy = JSON.parse(JSON.stringify(sessionsData));
@@ -34,6 +36,7 @@ const getAllSessionSinceToday = () => {
     return sessionsSinceToday;
 }
 
+// Llamada desde localhost:3001/havenV1/sessions/today
 const getTodaySessions = () => {
     console.log("Get /sessions/today AllTday Model")
     const sessionsCopy = JSON.parse(JSON.stringify(sessionsData));

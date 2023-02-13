@@ -10,5 +10,11 @@
     "nick": "Pepita",
     "email": "example2@example.com",
     "password": "Pestillo.123"
+  },
+  {
+    "id": "ef91b65e-ee4d-41f1-91f6-82dce370e7e2",
+    "nick": "Juanito123",
+    "email": "example@example.com",
+    "password": "Pestillo123"
   }
 ]
