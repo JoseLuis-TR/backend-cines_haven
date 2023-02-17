@@ -47,8 +47,42 @@ const postNewUser = (req,res,next) => {
     }
 }
 
+const updateUser = (req,res,next) => {
+    // Extraemos los datos del cuerpo de la petición
+    let { id, nick, email, password } = req.body;
+
+    let file = req.file;
+
+    if(typeof file === "undefined"){
+        file = false
+    }
+
+    // Revisamos que no falten datos
+    if(!nick || !email || !password){
+        res.status(400).send({"mensaje":"Faltan datos"}).end()
+    }
+
+    // Creamos el objeto con los datos a crear
+    const updateUser = {
+        "id" : id,
+        "nick" : nick,
+        "email" : email,
+        "password" : password,
+        "profilePicture" : "static/profilepics/" + file.filename
+    };
+
+    const updatedUser = userServices.updateUser(updateUser);
+
+    if(updatedUser){
+        res.status(200).send(updatedUser)
+    } else {
+        res.status(406).send(updatedUser).end()
+    }
+}
+
 module.exports = {
     getAllUsers,
     getOneUser,
-    postNewUser
+    postNewUser,
+    updateUser
 }

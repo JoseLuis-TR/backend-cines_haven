@@ -1,9 +1,10 @@
 [
   {
-    "id": 1,
-    "nick": "Pepito",
+    "id": "1",
+    "nick": "Pedrito123",
     "email": "example@example.com",
-    "password": "Pestillo.123"
+    "password": "123123",
+    "profilePicture": "static/profilepics/meme.jpg"
   },
   {
     "id": 2,

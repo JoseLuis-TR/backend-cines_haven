@@ -28,8 +28,18 @@ const postNewUser = (newUser) => {
     }
 }
 
+const updateUser = (userModificado) => {
+    const modifiedUser = usersModels.updateUser(userModificado)
+    if(modifiedUser){
+        return modifiedUser
+    } else {
+        return false
+    }
+}
+
 module.exports = {
     getAllUsers,
     getOneUser,
-    postNewUser
+    postNewUser,
+    updateUser
 }

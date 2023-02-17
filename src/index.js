@@ -7,8 +7,12 @@ app.use(cors())
 app.use(express.json())
 app.use("/havenV1", havenRoutes.router)
 
+const path = require('path')
+app.use('/static', express.static(path.join(__dirname, 'public')))
+
 app.use((err,req,res,next) => {
     console.log("Se ha recogido algún error");
+    console.log(err)
     res.status(500).end();
 })
 
