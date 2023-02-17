@@ -9,14 +9,14 @@ const getAllUsers = (req,res,next) => {
 // Llamada desde localhost:3001/havenV1/users/:nickname
 const getOneUser = (req,res,next) => {
     // Extramos el nick de la petición
-    const { username } = req.params;
+    const { nick } = req.params;
 
-    const userData = userServices.getOneUser(username.toLowerCase());
+    const userData = userServices.getOneUser(nick);
 
     if(userData.length > 0){
         res.status(200).send(userData);
     } else {
-        res.status(404).send({"mensaje":"No existe ese usuario"}).end();
+        res.status(404).send(false).end();
     }
 }
 

@@ -7,8 +7,8 @@ const getAllUsers = () => {
 }
 
 // Llamada desde localhost:3001/havenV1/users/:nickname
-const getOneUser = (nickname) => {
-    return usersModels.getOneUser(nickname)
+const getOneUser = (nick) => {
+    return usersModels.getOneUser(nick)
 }
 
 // Llamada desde localhost:3001/havenV1/users con body

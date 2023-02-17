@@ -8,9 +8,10 @@ const getAllUsers = () => {
 }
 
 // Llamada desde localhost:3001/havenV1/users/:nickname
-const getOneUser = (nickname) => {
+const getOneUser = (nick) => {
     // Devolvemos el usuario o lista vacia
-    return userData.filter(user => user.nick.toLowerCase() === nickname);
+    console.log(nick)
+    return userData.filter(user => user.nick === nick);
 }
 
 // Llamada desde localhost:3001/havenV1/users con body
@@ -21,7 +22,7 @@ const postNewUser = (newUser) => {
         return user.nick === newUser.nick
     })
     // Devolvemos falso en caso de existir el usuario
-    if(check) return false
+    if(check) return {"message": "Nombre de usuario ya en uso"}
 
     // Si no, se añade y se modifica la base de datos
     userData.push(newUser)

@@ -7,8 +7,8 @@ router.route("/")
     .get(userController.getAllUsers)
     .post(userController.postNewUser)
 
-// localhost:3001/havenV1/users/:nickname
-router.route("/:nickname")
+// localhost:3001/havenV1/users/:email
+router.route("/:nick")
     .get(userController.getOneUser)
 
 module.exports.router = router;
