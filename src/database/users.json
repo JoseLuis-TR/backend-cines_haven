@@ -1,51 +1,15 @@
 [
   {
-    "id": "1",
-    "nick": "Pedrito123",
-    "email": "example@example.com",
-    "password": "123123",
+    "id": "0f72643a-acd2-483d-8e65-b4dc7257ba4d",
+    "nick": "Pedrito",
+    "email": "jltrgd@gmail.com",
     "profilePicture": "static/profilepics/meme.jpg"
   },
   {
-    "id": 2,
-    "nick": "Pepita",
-    "email": "example2@example.com",
-    "password": "Pestillo.123"
-  },
-  {
-    "id": "ef91b65e-ee4d-41f1-91f6-82dce370e7e2",
-    "nick": "Juanito123",
-    "email": "example3@example.com",
-    "password": "Pestillo123"
-  },
-  {
-    "id": "b1e612b0-e331-45c3-9d43-5faeba9ab189",
-    "nick": "Juanito1234",
+    "id": "69943f9d-a58e-4631-bf59-35c7614fb5a0",
+    "nick": "Pepito",
     "email": "example@example.com",
-    "password": "Pestillo123"
-  },
-  {
-    "id": "a415acea-1dc1-467d-b7af-d7e86f3bae4e",
-    "nick": "Juanito1235",
-    "email": "example@example.com",
-    "password": "Pestillo.123"
-  },
-  {
-    "id": "9ecfa3bd-699b-46e8-a700-aa84ed3fbb60",
-    "nick": "31231231231",
-    "email": "example@example.com",
-    "password": "Pestillo.123"
-  },
-  {
-    "id": "9ed94f0a-a2a6-4770-8634-85efead507e0",
-    "nick": "joseltr",
-    "email": "jltrgd@gmail.com",
-    "password": "Pestillo.123"
-  },
-  {
-    "id": "a5c5be82-d2c7-4146-acfc-403a5b567c67",
-    "nick": "Pedro123",
-    "email": "jltrgd@gmail.com",
-    "password": "49e36d262cb0021f41e289094f921f476db3f764"
+    "password": "49e36d262cb0021f41e289094f921f476db3f764",
+    "profilePicture": "static/profilepics/default.svg"
   }
 ]

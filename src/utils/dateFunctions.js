@@ -11,16 +11,16 @@ const getTodayFormatted = () => {
 
 // Necesaria para conocer si una fecha es posterior a otra
 // Se usa en la petición de peliculas desde el día de hoy, de esta manera
-const isLater = (date1, date2) => {
+const isSameOrLater = (date1, date2) => {
     date1 = date1.split("/")
     date2 = date2.split("/")
 
     const dateObject1 = new Date(date1[2], date1[1], date1[0])
     const dateObject2 = new Date(date2[2], date2[1], date2[0])
-    return dateObject1 > dateObject2
+    return dateObject1 >= dateObject2
 }
 
 module.exports = {
     getTodayFormatted,
-    isLater
+    isSameOrLater
 }

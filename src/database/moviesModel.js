@@ -1,14 +1,15 @@
 const moviesData = require("./movies.json");
-const roomsData = require("./rooms.json");
 const sessionsController = require("./sessionsModel")
 
 // Llamada desde localhost:3001/havenV1/movies
+// Devolvemos todas las peliculas de la base de datos
 const getAllMovies = () => {
     console.log("Get /movies Model")
     return moviesData
 }
 
 // Llamada desde localhost:3001/havenV1/movies/:id
+// Devolvemos una pelicula en concreto usando su id
 const getOneMovie = (id) => {
     console.log("Get /movies/:id Model")
 
@@ -34,7 +35,6 @@ const getOneMovie = (id) => {
             }
         })
     }
-    console.log(selectedMovie)
     return selectedMovie
 }
 
