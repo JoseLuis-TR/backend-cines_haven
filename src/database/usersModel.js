@@ -9,7 +9,7 @@ const getAllUsers = () => {
     return userData
 }
 
-// Llamada desde localhost:3001/havenV1/users/:nickname
+// Llamada desde localhost:3001/havenV1/users/:nick
 // Devolvemos un usuario en concreto
 const getOneUser = (nick) => {
     console.log("Get /users/:nick Model")
@@ -42,7 +42,7 @@ const postNewUser = (newUser) => {
     return newUser
 }
 
-// Llamada desde localhost:3001/havenV1/users con body
+// Llamada desde localhost:3001/havenV1/users/updateuser con body
 // Recibimos un usuario modificado y lo actualizamos en la base de datos
 const updateUser = (userModificado) => {
     console.log("Put /users Model")
@@ -51,6 +51,8 @@ const updateUser = (userModificado) => {
     const userOriginal = userData.find(user => 
         user.id.toString() === userModificado.id
     )
+
+    console.log(userOriginal.nick)
 
     // En caso de cambio de nick, revisamos que el nuevo nick no este en uso
     if(userModificado.nick !== userOriginal.nick){
@@ -65,10 +67,12 @@ const updateUser = (userModificado) => {
     if(!userOriginal) return {"message": "Nombre de usuario no encontrado"}
 
     // Si se ha cambiado la foto de perfil, se borra la anterior
-    if(userModificado.profilePicture && userOriginal.profilePicture){
+    if(userModificado.profilePicture !== "" && userOriginal.profilePicture !== ""){
         const filename = userOriginal.profilePicture.split("/")[2];
         const filePath = path.join(__dirname, "..","public", "profilepics", filename);
         fs.unlinkSync(filePath);
+    } else if (userModificado.profilePicture === "" && userOriginal.profilePicture !== "") {
+        userModificado.profilePicture = userOriginal.profilePicture
     }
 
     // Si no se ha cambiado la contraseña, se mantiene la original
@@ -76,10 +80,13 @@ const updateUser = (userModificado) => {
         userModificado.password = userOriginal.password
     }
 
+    let userModificadoFinal;
+
     // Se modifica el usuario en el objeto de la base de datos
     userData.forEach((user, index) => {
         if(user.id.toString() === userModificado.id){
             userData[index] = userModificado
+            userModificadoFinal = userData[0]
             return
         }
     })

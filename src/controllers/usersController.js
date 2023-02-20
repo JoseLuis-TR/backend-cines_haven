@@ -48,7 +48,7 @@ const postNewUser = (req,res,next) => {
         "nick" : body.nick,
         "email" : body.email,
         "password" : body.password,
-        "profilePicture" : "static/profilepics/default.svg"
+        "profilePicture" : ""
     };
 
     const createdUser = userServices.postNewUser(newUser);
@@ -67,7 +67,9 @@ const updateUser = (req,res,next) => {
     console.log("Put /users/updateuser Controlador")
 
     // Extraemos los datos del cuerpo de la petición
-    let { id, nick, email, password } = req.body;
+    let { id, nick, email, pass } = req.body;
+
+    console.log(pass)
 
     // Extraemos el archivo de la petición
     let file = req.file;
@@ -87,9 +89,11 @@ const updateUser = (req,res,next) => {
         "id" : id,
         "nick" : nick,
         "email" : email,
-        "password" : password,
-        "profilePicture" : "static/profilepics/" + file.filename
+        "password" : pass === undefined ? "" : pass,
+        "profilePicture" : file.filename === undefined ? "" : "static/profilepics/" + file.filename
     };
+
+    console.log(updateUser)
 
     const updatedUser = userServices.updateUser(updateUser);
 

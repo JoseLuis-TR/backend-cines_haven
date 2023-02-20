@@ -1,15 +1,9 @@
 [
   {
-    "id": "0f72643a-acd2-483d-8e65-b4dc7257ba4d",
-    "nick": "Pedrito",
-    "email": "jltrgd@gmail.com",
-    "profilePicture": "static/profilepics/meme.jpg"
-  },
-  {
-    "id": "69943f9d-a58e-4631-bf59-35c7614fb5a0",
-    "nick": "Pepito",
-    "email": "example@example.com",
-    "password": "49e36d262cb0021f41e289094f921f476db3f764",
-    "profilePicture": "static/profilepics/default.svg"
+    "id": "9d381771-8349-496d-abf0-3b4c8106b277",
+    "nick": "Pedro",
+    "email": "Pedro@pedro.com",
+    "password": "3b84c71441266e7556ddc90bea510a714a35d756",
+    "profilePicture": "static/profilepics/3943-asuka-disgust-1676900324249.png"
   }
 ]

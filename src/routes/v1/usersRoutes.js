@@ -25,7 +25,8 @@ const storage = multer.diskStorage({
         cb(null,  __dirname + "/../../public/profilepics")
     },
     filename: (req,file,cb) => {
-        cb(null, file.originalname)
+        const fileExtension = file.originalname.split('.').pop();
+        cb(null, `${file.originalname.split('.')[0]}-${Date.now()}.${fileExtension}`)
     }
 });
 
